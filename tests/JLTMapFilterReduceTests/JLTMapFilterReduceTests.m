@@ -26,9 +26,42 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testArrayByMapping
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSArray *actual = [@[@"a", @"b", @"c"] JLT_arrayByMapping:^NSString *(NSString *string) {
+        return [string uppercaseString];
+    }];
+    NSArray *expected = @[@"A", @"B", @"C"];
+    XCTAssertEqualObjects(actual, expected, @"Mapping should have uppercased the strings.");
+}
+
+- (void)testArrayByFiltering
+{
+    NSArray *actual = [@[@"a", @"b", @"1"] JLT_arrayByFiltering:^BOOL(NSString *string) {
+        return [string rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].location != NSNotFound;
+    }];
+    NSArray *expected = @[@"a", @"b"];
+    XCTAssertEqualObjects(actual, expected, @"Filtering should have removed the 1.");
+}
+
+- (void)testArrayByReducing
+{
+    NSString *actual = [@[@"a", @"b", @"c"] JLT_objectByReducing:^NSString *(NSString *s1, NSString *s2) {
+        return [s1 stringByAppendingString:s2];
+    }];
+
+    NSString *expected = @"abc";
+    XCTAssertEqualObjects(actual, expected, @"Reducing should have returned %@.", expected);
+}
+
+- (void)testArrayByReducingInitialObject
+{
+    NSString *actual = [@[@"a", @"b", @"c"] JLT_objectByReducing:^NSString *(NSString *s1, NSString *s2) {
+        return [s1 stringByAppendingString:s2];
+    } initialObject:@"+"];
+
+    NSString *expected = @"+abc";
+    XCTAssertEqualObjects(actual, expected, @"Reducing should have returned %@.", expected);
 }
 
 @end

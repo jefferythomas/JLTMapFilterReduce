@@ -10,6 +10,7 @@
 		7BAD5F9518E7B396005E90B8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAD5F9418E7B396005E90B8 /* XCTest.framework */; };
 		7BAD5F9B18E7B396005E90B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BAD5F9918E7B396005E90B8 /* InfoPlist.strings */; };
 		7BAD5F9D18E7B396005E90B8 /* JLTMapFilterReduceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD5F9C18E7B396005E90B8 /* JLTMapFilterReduceTests.m */; };
+		7BAD5FA718E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD5FA618E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,8 @@
 		7BAD5F9A18E7B396005E90B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7BAD5F9C18E7B396005E90B8 /* JLTMapFilterReduceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLTMapFilterReduceTests.m; sourceTree = "<group>"; };
 		7BAD5F9E18E7B396005E90B8 /* JLTMapFilterReduceTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLTMapFilterReduceTests-Prefix.pch"; sourceTree = "<group>"; };
+		7BAD5FA518E7C0E5005E90B8 /* NSArray+JLTMapFilterReduce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+JLTMapFilterReduce.h"; path = "../NSArray+JLTMapFilterReduce.h"; sourceTree = "<group>"; };
+		7BAD5FA618E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+JLTMapFilterReduce.m"; path = "../NSArray+JLTMapFilterReduce.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +39,8 @@
 		7B416C3018E7B063009922E4 = {
 			isa = PBXGroup;
 			children = (
+				7BAD5FA518E7C0E5005E90B8 /* NSArray+JLTMapFilterReduce.h */,
+				7BAD5FA618E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m */,
 				7BAD5F9618E7B396005E90B8 /* JLTMapFilterReduceTests */,
 				7BAD5F9318E7B396005E90B8 /* Frameworks */,
 				7BAD5F9218E7B396005E90B8 /* Products */,
@@ -138,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BAD5FA718E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m in Sources */,
 				7BAD5F9D18E7B396005E90B8 /* JLTMapFilterReduceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
