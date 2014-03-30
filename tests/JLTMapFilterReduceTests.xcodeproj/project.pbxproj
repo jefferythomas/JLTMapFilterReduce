@@ -6,14 +6,98 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7BAD5F9518E7B396005E90B8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAD5F9418E7B396005E90B8 /* XCTest.framework */; };
+		7BAD5F9B18E7B396005E90B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BAD5F9918E7B396005E90B8 /* InfoPlist.strings */; };
+		7BAD5F9D18E7B396005E90B8 /* JLTMapFilterReduceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD5F9C18E7B396005E90B8 /* JLTMapFilterReduceTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7BAD5F9118E7B396005E90B8 /* JLTMapFilterReduceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLTMapFilterReduceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BAD5F9418E7B396005E90B8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7BAD5F9818E7B396005E90B8 /* JLTMapFilterReduceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JLTMapFilterReduceTests-Info.plist"; sourceTree = "<group>"; };
+		7BAD5F9A18E7B396005E90B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7BAD5F9C18E7B396005E90B8 /* JLTMapFilterReduceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLTMapFilterReduceTests.m; sourceTree = "<group>"; };
+		7BAD5F9E18E7B396005E90B8 /* JLTMapFilterReduceTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLTMapFilterReduceTests-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7BAD5F8E18E7B396005E90B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BAD5F9518E7B396005E90B8 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		7B416C3018E7B063009922E4 = {
 			isa = PBXGroup;
 			children = (
+				7BAD5F9618E7B396005E90B8 /* JLTMapFilterReduceTests */,
+				7BAD5F9318E7B396005E90B8 /* Frameworks */,
+				7BAD5F9218E7B396005E90B8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		7BAD5F9218E7B396005E90B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD5F9118E7B396005E90B8 /* JLTMapFilterReduceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BAD5F9318E7B396005E90B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD5F9418E7B396005E90B8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BAD5F9618E7B396005E90B8 /* JLTMapFilterReduceTests */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD5F9C18E7B396005E90B8 /* JLTMapFilterReduceTests.m */,
+				7BAD5F9718E7B396005E90B8 /* Supporting Files */,
+			);
+			path = JLTMapFilterReduceTests;
+			sourceTree = "<group>";
+		};
+		7BAD5F9718E7B396005E90B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD5F9818E7B396005E90B8 /* JLTMapFilterReduceTests-Info.plist */,
+				7BAD5F9918E7B396005E90B8 /* InfoPlist.strings */,
+				7BAD5F9E18E7B396005E90B8 /* JLTMapFilterReduceTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7BAD5F9018E7B396005E90B8 /* JLTMapFilterReduceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BAD5FA118E7B396005E90B8 /* Build configuration list for PBXNativeTarget "JLTMapFilterReduceTests" */;
+			buildPhases = (
+				7BAD5F8D18E7B396005E90B8 /* Sources */,
+				7BAD5F8E18E7B396005E90B8 /* Frameworks */,
+				7BAD5F8F18E7B396005E90B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JLTMapFilterReduceTests;
+			productName = JLTMapFilterReduceTests;
+			productReference = 7BAD5F9118E7B396005E90B8 /* JLTMapFilterReduceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7B416C3118E7B063009922E4 /* Project object */ = {
@@ -29,12 +113,47 @@
 				en,
 			);
 			mainGroup = 7B416C3018E7B063009922E4;
+			productRefGroup = 7BAD5F9218E7B396005E90B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				7BAD5F9018E7B396005E90B8 /* JLTMapFilterReduceTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7BAD5F8F18E7B396005E90B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BAD5F9B18E7B396005E90B8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BAD5F8D18E7B396005E90B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BAD5F9D18E7B396005E90B8 /* JLTMapFilterReduceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7BAD5F9918E7B396005E90B8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BAD5F9A18E7B396005E90B8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7B416C3518E7B063009922E4 /* Debug */ = {
@@ -49,6 +168,94 @@
 			};
 			name = Release;
 		};
+		7BAD5F9F18E7B396005E90B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JLTMapFilterReduceTests/JLTMapFilterReduceTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "JLTMapFilterReduceTests/JLTMapFilterReduceTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7BAD5FA018E7B396005E90B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JLTMapFilterReduceTests/JLTMapFilterReduceTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "JLTMapFilterReduceTests/JLTMapFilterReduceTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -60,6 +267,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7BAD5FA118E7B396005E90B8 /* Build configuration list for PBXNativeTarget "JLTMapFilterReduceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BAD5F9F18E7B396005E90B8 /* Debug */,
+				7BAD5FA018E7B396005E90B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
