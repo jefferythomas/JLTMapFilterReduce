@@ -10,7 +10,9 @@
 		7BAD5F9518E7B396005E90B8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAD5F9418E7B396005E90B8 /* XCTest.framework */; };
 		7BAD5F9B18E7B396005E90B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BAD5F9918E7B396005E90B8 /* InfoPlist.strings */; };
 		7BAD5F9D18E7B396005E90B8 /* JLTMapFilterReduceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD5F9C18E7B396005E90B8 /* JLTMapFilterReduceTests.m */; };
-		7BAD5FA718E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD5FA618E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m */; };
+		7BF4FAC618E8F7C800D1AB8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF4FAC518E8F7C700D1AB8A /* Foundation.framework */; };
+		7BF4FAC918E8F7C800D1AB8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF4FAC818E8F7C800D1AB8A /* main.m */; };
+		7BF4FAD118E8F8C900D1AB8A /* NSArray+JLTMapFilterReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD5FA618E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		7BAD5F9E18E7B396005E90B8 /* JLTMapFilterReduceTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLTMapFilterReduceTests-Prefix.pch"; sourceTree = "<group>"; };
 		7BAD5FA518E7C0E5005E90B8 /* NSArray+JLTMapFilterReduce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+JLTMapFilterReduce.h"; path = "../NSArray+JLTMapFilterReduce.h"; sourceTree = "<group>"; };
 		7BAD5FA618E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+JLTMapFilterReduce.m"; path = "../NSArray+JLTMapFilterReduce.m"; sourceTree = "<group>"; };
+		7BF4FAC418E8F7C700D1AB8A /* JLTMapFilterReducePerformance */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = JLTMapFilterReducePerformance; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BF4FAC518E8F7C700D1AB8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7BF4FAC818E8F7C800D1AB8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7BF4FACB18E8F7C800D1AB8A /* JLTMapFilterReducePerformance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLTMapFilterReducePerformance-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +36,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BAD5F9518E7B396005E90B8 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BF4FAC118E8F7C700D1AB8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BF4FAC618E8F7C800D1AB8A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +56,7 @@
 				7BAD5FA518E7C0E5005E90B8 /* NSArray+JLTMapFilterReduce.h */,
 				7BAD5FA618E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m */,
 				7BAD5F9618E7B396005E90B8 /* JLTMapFilterReduceTests */,
+				7BF4FAC718E8F7C800D1AB8A /* JLTMapFilterReducePerformance */,
 				7BAD5F9318E7B396005E90B8 /* Frameworks */,
 				7BAD5F9218E7B396005E90B8 /* Products */,
 			);
@@ -51,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				7BAD5F9118E7B396005E90B8 /* JLTMapFilterReduceTests.xctest */,
+				7BF4FAC418E8F7C700D1AB8A /* JLTMapFilterReducePerformance */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				7BAD5F9418E7B396005E90B8 /* XCTest.framework */,
+				7BF4FAC518E8F7C700D1AB8A /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,6 +95,23 @@
 				7BAD5F9818E7B396005E90B8 /* JLTMapFilterReduceTests-Info.plist */,
 				7BAD5F9918E7B396005E90B8 /* InfoPlist.strings */,
 				7BAD5F9E18E7B396005E90B8 /* JLTMapFilterReduceTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7BF4FAC718E8F7C800D1AB8A /* JLTMapFilterReducePerformance */ = {
+			isa = PBXGroup;
+			children = (
+				7BF4FAC818E8F7C800D1AB8A /* main.m */,
+				7BF4FACA18E8F7C800D1AB8A /* Supporting Files */,
+			);
+			path = JLTMapFilterReducePerformance;
+			sourceTree = "<group>";
+		};
+		7BF4FACA18E8F7C800D1AB8A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7BF4FACB18E8F7C800D1AB8A /* JLTMapFilterReducePerformance-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -102,6 +136,22 @@
 			productReference = 7BAD5F9118E7B396005E90B8 /* JLTMapFilterReduceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7BF4FAC318E8F7C700D1AB8A /* JLTMapFilterReducePerformance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BF4FAD018E8F7C800D1AB8A /* Build configuration list for PBXNativeTarget "JLTMapFilterReducePerformance" */;
+			buildPhases = (
+				7BF4FAC018E8F7C700D1AB8A /* Sources */,
+				7BF4FAC118E8F7C700D1AB8A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JLTMapFilterReducePerformance;
+			productName = JLTMapFilterReducePerformance;
+			productReference = 7BF4FAC418E8F7C700D1AB8A /* JLTMapFilterReducePerformance */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -123,6 +173,7 @@
 			projectRoot = "";
 			targets = (
 				7BAD5F9018E7B396005E90B8 /* JLTMapFilterReduceTests */,
+				7BF4FAC318E8F7C700D1AB8A /* JLTMapFilterReducePerformance */,
 			);
 		};
 /* End PBXProject section */
@@ -143,8 +194,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BAD5FA718E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m in Sources */,
 				7BAD5F9D18E7B396005E90B8 /* JLTMapFilterReduceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BF4FAC018E8F7C700D1AB8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BF4FAD118E8F8C900D1AB8A /* NSArray+JLTMapFilterReduce.m in Sources */,
+				7BF4FAC918E8F7C800D1AB8A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,12 +224,14 @@
 		7B416C3518E7B063009922E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				USER_HEADER_SEARCH_PATHS = ".. $(inherited)";
 			};
 			name = Debug;
 		};
 		7B416C3618E7B063009922E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				USER_HEADER_SEARCH_PATHS = ".. $(inherited)";
 			};
 			name = Release;
 		};
@@ -262,6 +323,82 @@
 			};
 			name = Release;
 		};
+		7BF4FACE18E8F7C800D1AB8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JLTMapFilterReducePerformance/JLTMapFilterReducePerformance-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7BF4FACF18E8F7C800D1AB8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JLTMapFilterReducePerformance/JLTMapFilterReducePerformance-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -279,6 +416,15 @@
 			buildConfigurations = (
 				7BAD5F9F18E7B396005E90B8 /* Debug */,
 				7BAD5FA018E7B396005E90B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BF4FAD018E8F7C800D1AB8A /* Build configuration list for PBXNativeTarget "JLTMapFilterReducePerformance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BF4FACE18E8F7C800D1AB8A /* Debug */,
+				7BF4FACF18E8F7C800D1AB8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

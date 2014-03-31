@@ -13,20 +13,23 @@
 - (NSArray *)JLT_arrayByMapping:(id (^)(id))mapping
 {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    for (id obj in self) {
         id mappedObject = mapping(obj);
         NSAssert(mappedObject, @"mapping must not result in a nil object");
         [result addObject:mappedObject];
-    }];
+    }
     return result;
 }
 
 - (NSArray *)JLT_arrayByFiltering:(BOOL (^)(id))filtering
 {
-    NSIndexSet *indexes = [self indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        return filtering(obj);
-    }];
-    return [self objectsAtIndexes:indexes];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
+    for (id obj in self) {
+        if (filtering(obj)) {
+            [result addObject:obj];
+        }
+    }
+    return result;
 }
 
 - (id)JLT_objectByReducing:(id(^)(id, id))reducing
@@ -41,10 +44,10 @@
 {
     NSAssert([self count] >= 1, @"Cannot reduce an array with less than 1 object");
 
-    __block id result = obj;
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    id result = obj;
+    for (id obj in self) {
         result = reducing(result, obj);
-    }];
+    }
     return result;
 }
 

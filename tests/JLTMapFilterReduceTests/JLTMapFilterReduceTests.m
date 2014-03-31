@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "NSArray+JLTMapFilterReduce.h"
 
 @interface JLTMapFilterReduceTests : XCTestCase
 
