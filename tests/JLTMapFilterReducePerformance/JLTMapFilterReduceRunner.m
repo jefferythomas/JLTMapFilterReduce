@@ -12,41 +12,67 @@
 
 @implementation JLTMapFilterReduceRunner
 
+- (NSTimeInterval)durationOfBlock:(void(^)(void))block
+{
+    uint64_t start = mach_absolute_time();
+    block();
+    uint64_t stop = mach_absolute_time();
+    return [self durationFromMachAbsoluteTimeDuration:stop - start];
+}
+
+- (NSString *)formattedNumberWithDurationOfBlock:(void(^)(void))block
+{
+    return [self.numberFormatter stringFromNumber:@([self durationOfBlock:block])];
+}
+
 - (void)runAll
 {
-    uint64_t start;
-    uint64_t stop;
-    size_t i;
     NSArray *sample = @[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9"];
-    NSNumberFormatter *formatter = [NSNumberFormatter new];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
 
-    start = mach_absolute_time();
-    for (i = 0; i < 1000; ++i) {
-        [sample JLT_arrayByMapping:^id(id obj) {
-            return obj;
-        }];
-    }
-    stop = mach_absolute_time();
-    NSLog(@"JLT_arrayByMapping: %@ time units", [formatter stringFromNumber:@(stop-start)]);
+    NSLog(@"JLT_arrayByMapping: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
+        for (size_t i = 0; i < 1000; ++i) {
+            [sample JLT_arrayByMapping:^id(id obj) {
+                return obj;
+            }];
+        }
+    }]);
 
-    start = mach_absolute_time();
-    for (i = 0; i < 1000; ++i) {
-        [sample JLT_arrayByFiltering:^BOOL(id obj) {
-            return YES;
-        }];
-    }
-    stop = mach_absolute_time();
-    NSLog(@"JLT_arrayByFiltering: %@ time units", [formatter stringFromNumber:@(stop-start)]);
+    NSLog(@"JLT_arrayByFiltering: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
+        for (size_t i = 0; i < 1000; ++i) {
+            [sample JLT_arrayByFiltering:^BOOL(id obj) {
+                return YES;
+            }];
+        }
+    }]);
 
-    start = mach_absolute_time();
-    for (i = 0; i < 1000; ++i) {
-        [sample JLT_objectByReducing:^id(id obj1, id obj2) {
-            return obj1;
-        } initialObject:@"-"];
+    NSLog(@"JLT_objectByReducing: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
+        for (size_t i = 0; i < 1000; ++i) {
+            [sample JLT_objectByReducing:^id(id obj1, id obj2) {
+                return obj1;
+            } initialObject:@"-"];
+        }
+    }]);
+}
+
+#pragma mark Private
+
+- (NSTimeInterval)durationFromMachAbsoluteTimeDuration:(uint64_t)duration
+{
+    mach_timebase_info_data_t info;
+    mach_timebase_info(&info);
+
+    NSTimeInterval time = (NSTimeInterval)info.numer / (NSTimeInterval)info.denom * (NSTimeInterval)1E-9;
+    return duration * time;
+}
+
+- (NSNumberFormatter *)numberFormatter
+{
+    if (!_numberFormatter) {
+        NSNumberFormatter *formatter = [NSNumberFormatter new];
+        [formatter setNumberStyle:NSNumberFormatterScientificStyle];
+        _numberFormatter = formatter;
     }
-    stop = mach_absolute_time();
-    NSLog(@"JLT_objectByReducing:initialObject: %@ time units", [formatter stringFromNumber:@(stop-start)]);
+    return _numberFormatter;
 }
 
 @end
