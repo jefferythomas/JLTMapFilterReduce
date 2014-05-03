@@ -13,6 +13,8 @@
 		7BF4FAC618E8F7C800D1AB8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF4FAC518E8F7C700D1AB8A /* Foundation.framework */; };
 		7BF4FAC918E8F7C800D1AB8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF4FAC818E8F7C800D1AB8A /* main.m */; };
 		7BF4FAD118E8F8C900D1AB8A /* NSArray+JLTMapFilterReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD5FA618E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m */; };
+		7BF4FAD218E8FA4D00D1AB8A /* NSArray+JLTMapFilterReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD5FA618E7C0E6005E90B8 /* NSArray+JLTMapFilterReduce.m */; };
+		7BF4FAD518E8FC0800D1AB8A /* JLTMapFilterReduceRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF4FAD418E8FC0800D1AB8A /* JLTMapFilterReduceRunner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		7BF4FAC518E8F7C700D1AB8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7BF4FAC818E8F7C800D1AB8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7BF4FACB18E8F7C800D1AB8A /* JLTMapFilterReducePerformance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLTMapFilterReducePerformance-Prefix.pch"; sourceTree = "<group>"; };
+		7BF4FAD318E8FC0800D1AB8A /* JLTMapFilterReduceRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTMapFilterReduceRunner.h; sourceTree = "<group>"; };
+		7BF4FAD418E8FC0800D1AB8A /* JLTMapFilterReduceRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTMapFilterReduceRunner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 		7BF4FAC718E8F7C800D1AB8A /* JLTMapFilterReducePerformance */ = {
 			isa = PBXGroup;
 			children = (
+				7BF4FAD318E8FC0800D1AB8A /* JLTMapFilterReduceRunner.h */,
+				7BF4FAD418E8FC0800D1AB8A /* JLTMapFilterReduceRunner.m */,
 				7BF4FAC818E8F7C800D1AB8A /* main.m */,
 				7BF4FACA18E8F7C800D1AB8A /* Supporting Files */,
 			);
@@ -194,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BF4FAD218E8FA4D00D1AB8A /* NSArray+JLTMapFilterReduce.m in Sources */,
 				7BAD5F9D18E7B396005E90B8 /* JLTMapFilterReduceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +211,7 @@
 			files = (
 				7BF4FAD118E8F8C900D1AB8A /* NSArray+JLTMapFilterReduce.m in Sources */,
 				7BF4FAC918E8F7C800D1AB8A /* main.m in Sources */,
+				7BF4FAD518E8FC0800D1AB8A /* JLTMapFilterReduceRunner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
