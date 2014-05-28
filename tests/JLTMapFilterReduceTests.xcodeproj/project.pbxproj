@@ -165,6 +165,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
+				TargetAttributes = {
+					7BAD5F9018E7B396005E90B8 = {
+						TestTargetID = 7BF4FAC318E8F7C700D1AB8A;
+					};
+				};
 			};
 			buildConfigurationList = 7B416C3418E7B063009922E4 /* Build configuration list for PBXProject "JLTMapFilterReduceTests" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -435,6 +440,7 @@
 				7BF4FACF18E8F7C800D1AB8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
