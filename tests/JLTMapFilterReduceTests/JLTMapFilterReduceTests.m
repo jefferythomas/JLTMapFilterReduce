@@ -29,7 +29,7 @@
 
 - (void)testArrayByMapping
 {
-    NSArray *actual = [@[@"a", @"b", @"c"] JLT_arrayByMapping:^NSString *(NSString *string) {
+    NSArray *actual = [@[@"a", @"b", @"c"] arrayByMapping:^NSString *(NSString *string) {
         return [string uppercaseString];
     }];
     NSArray *expected = @[@"A", @"B", @"C"];
@@ -38,7 +38,7 @@
 
 - (void)testArrayByFiltering
 {
-    NSArray *actual = [@[@"a", @"b", @"1"] JLT_arrayByFiltering:^BOOL(NSString *string) {
+    NSArray *actual = [@[@"a", @"b", @"1"] arrayByFiltering:^BOOL(NSString *string) {
         return [string rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].location != NSNotFound;
     }];
     NSArray *expected = @[@"a", @"b"];
@@ -47,7 +47,7 @@
 
 - (void)testArrayByReducing
 {
-    NSString *actual = [@[@"a", @"b", @"c"] JLT_objectByReducing:^NSString *(NSString *s1, NSString *s2) {
+    NSString *actual = [@[@"a", @"b", @"c"] objectByReducing:^NSString *(NSString *s1, NSString *s2) {
         return [s1 stringByAppendingString:s2];
     }];
 
@@ -57,7 +57,7 @@
 
 - (void)testArrayByReducingInitialObject
 {
-    NSString *actual = [@[@"a", @"b", @"c"] JLT_objectByReducing:^NSString *(NSString *s1, NSString *s2) {
+    NSString *actual = [@[@"a", @"b", @"c"] objectByReducing:^NSString *(NSString *s1, NSString *s2) {
         return [s1 stringByAppendingString:s2];
     } initialObject:@"+"];
 

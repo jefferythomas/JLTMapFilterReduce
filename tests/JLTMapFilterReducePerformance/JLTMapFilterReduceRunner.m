@@ -29,25 +29,25 @@
 {
     NSArray *sample = @[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9"];
 
-    NSLog(@"JLT_arrayByMapping: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
+    NSLog(@"arrayByMapping: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
         for (size_t i = 0; i < 1000; ++i) {
-            [sample JLT_arrayByMapping:^id(id obj) {
+            [sample arrayByMapping:^id(id obj) {
                 return obj;
             }];
         }
     }]);
 
-    NSLog(@"JLT_arrayByFiltering: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
+    NSLog(@"arrayByFiltering: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
         for (size_t i = 0; i < 1000; ++i) {
-            [sample JLT_arrayByFiltering:^BOOL(id obj) {
+            [sample arrayByFiltering:^BOOL(id obj) {
                 return YES;
             }];
         }
     }]);
 
-    NSLog(@"JLT_objectByReducing: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
+    NSLog(@"objectByReducing: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
         for (size_t i = 0; i < 1000; ++i) {
-            [sample JLT_objectByReducing:^id(id obj1, id obj2) {
+            [sample objectByReducing:^id(id obj1, id obj2) {
                 return obj1;
             } initialObject:@"-"];
         }
