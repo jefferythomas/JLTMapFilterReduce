@@ -46,11 +46,11 @@
     return [[self arrayByRemovingFirstObject] objectByReducing:reducing initialObject:[self firstObject]];
 }
 
-- (id)objectByReducing:(id (^)(id, id))reducing initialObject:(id)obj
+- (id)objectByReducing:(id (^)(id, id))reducing initialObject:(id)initialObject
 {
     NSAssert([self count] >= 1, @"Cannot reduce an array with less than 1 object");
 
-    id result = obj;
+    id result = initialObject;
     for (id obj in self) {
         result = reducing(result, obj);
     }
@@ -59,11 +59,7 @@
 
 - (NSArray *)arrayByRemovingFirstObject
 {
-    if ([self count] < 2)
-        return [NSArray array];
-
-    NSRange range = NSMakeRange(1, [self count] - 1);
-    return [self subarrayWithRange:range];
+    return [self count] > 1 ? [self subarrayWithRange:NSMakeRange(1, [self count] - 1)] : @[];
 }
 
 @end
