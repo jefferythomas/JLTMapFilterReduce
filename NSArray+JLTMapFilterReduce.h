@@ -8,32 +8,34 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (JLTMapFilterReduce)
+@interface NSArray<ElementType> (JLTMapFilterReduce)
+NS_ASSUME_NONNULL_BEGIN
 
 #if !defined(JLT_PREFIX_CATEGORIES)
 
-- (NSArray *)arrayByMapping:(id(^)(id obj))mapping;
+- (NSArray *)arrayByMapping:(id(^)(ElementType el))mapping;
 
-- (NSArray *)arrayByFiltering:(BOOL(^)(id obj))filtering;
+- (NSArray<ElementType> *)arrayByFiltering:(BOOL(^)(ElementType el))filtering;
 
-- (id)objectByReducing:(id(^)(id obj1, id obj2))reducing;
+- (id)objectByReducing:(id(^)(id obj, ElementType el))reducing;
 
-- (id)objectByReducing:(id(^)(id obj1, id obj2))reducing initialObject:(id)obj;
+- (id)objectByReducing:(id(^)(id obj, ElementType el))reducing initialObject:(id)obj;
 
-- (NSArray *)arrayByRemovingFirstObject;
+- (NSArray<ElementType> *)arrayByRemovingFirstObject;
 
 #else
 
-- (NSArray *)JLT_arrayByMapping:(id(^)(id obj))mapping;
+- (NSArray *)JLT_arrayByMapping:(id(^)(ElementType el))mapping;
 
-- (NSArray *)JLT_arrayByFiltering:(BOOL(^)(id obj))filtering;
+- (NSArray<ElementType> *)JLT_arrayByFiltering:(BOOL(^)(ElementType el))filtering;
 
-- (id)JLT_objectByReducing:(id(^)(id obj1, id obj2))reducing;
+- (id)JLT_objectByReducing:(id(^)(id obj, ElementType el))reducing;
 
-- (id)JLT_objectByReducing:(id(^)(id obj1, id obj2))reducing initialObject:(id)obj;
+- (id)JLT_objectByReducing:(id(^)(id obj, ElementType el))reducing initialObject:(id)obj;
 
-- (NSArray *)JLT_arrayByRemovingFirstObject;
+- (NSArray<ElementType> *)JLT_arrayByRemovingFirstObject;
 
 #endif
 
+NS_ASSUME_NONNULL_END
 @end
