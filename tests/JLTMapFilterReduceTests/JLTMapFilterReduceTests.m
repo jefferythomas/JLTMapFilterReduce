@@ -29,26 +29,29 @@
 
 - (void)testArrayByMapping
 {
-    NSArray *actual = [@[@"a", @"b", @"c"] arrayByMapping:^NSString *(NSString *string) {
-        return [string uppercaseString];
+    NSArray<NSString *> *actual = [@[@"a", @"b", @"c"] arrayByMapping:^id _Nonnull(NSString * _Nonnull obj) {
+        return obj.uppercaseString;
     }];
-    NSArray *expected = @[@"A", @"B", @"C"];
+
+    NSArray<NSString *> *expected = @[@"A", @"B", @"C"];
     XCTAssertEqualObjects(actual, expected, @"Mapping should have uppercased the strings.");
 }
 
 - (void)testArrayByFiltering
 {
-    NSArray *actual = [@[@"a", @"b", @"1"] arrayByFiltering:^BOOL(NSString *string) {
-        return [string rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].location != NSNotFound;
+    NSArray<NSString *> *actual = [@[@"a", @"b", @"1"] arrayByFiltering:^BOOL(NSString * _Nonnull obj) {
+        return [obj rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].location != NSNotFound;
     }];
-    NSArray *expected = @[@"a", @"b"];
+
+    NSArray<NSString *> *expected = @[@"a", @"b"];
     XCTAssertEqualObjects(actual, expected, @"Filtering should have removed the 1.");
 }
 
 - (void)testArrayByReducing
 {
-    NSString *actual = [@[@"a", @"b", @"c"] objectByReducing:^NSString *(NSString *s1, NSString *s2) {
-        return [s1 stringByAppendingString:s2];
+    NSString *actual =
+    [@[@"a", @"b", @"c"] objectByReducing:^id _Nonnull(id _Nonnull reducedObject, NSString * _Nonnull obj) {
+        return [reducedObject stringByAppendingString:obj];
     }];
 
     NSString *expected = @"abc";
@@ -57,8 +60,9 @@
 
 - (void)testArrayByReducingInitialObject
 {
-    NSString *actual = [@[@"a", @"b", @"c"] objectByReducing:^NSString *(NSString *s1, NSString *s2) {
-        return [s1 stringByAppendingString:s2];
+    NSString *actual =
+    [@[@"a", @"b", @"c"] objectByReducing:^id _Nonnull(id _Nonnull reducedObject, NSString * _Nonnull obj) {
+        return [reducedObject stringByAppendingString:obj];
     } initialObject:@"+"];
 
     NSString *expected = @"+abc";

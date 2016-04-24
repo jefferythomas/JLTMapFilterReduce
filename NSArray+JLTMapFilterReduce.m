@@ -19,7 +19,7 @@
 
 - (NSArray *)arrayByMapping:(id (^)(id))mapping
 {
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
     for (id obj in self) {
         id mappedObject = mapping(obj);
         NSAssert(mappedObject, @"mapping must not result in a nil object");
@@ -30,7 +30,7 @@
 
 - (NSArray *)arrayByFiltering:(BOOL (^)(id))filtering
 {
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
     for (id obj in self) {
         if (filtering(obj)) {
             [result addObject:obj];
@@ -41,14 +41,14 @@
 
 - (id)objectByReducing:(id(^)(id, id))reducing
 {
-    NSAssert([self count] >= 2, @"Cannot reduce an array with less than 2 objects");
+    NSAssert(self.count >= 2, @"Cannot reduce an array with less than 2 objects");
 
-    return [[self arrayByRemovingFirstObject] objectByReducing:reducing initialObject:[self firstObject]];
+    return [[self arrayByRemovingFirstObject] objectByReducing:reducing initialObject:self.firstObject];
 }
 
 - (id)objectByReducing:(id (^)(id, id))reducing initialObject:(id)initialObject
 {
-    NSAssert([self count] >= 1, @"Cannot reduce an array with less than 1 object");
+    NSAssert(self.count >= 1, @"Cannot reduce an array with less than 1 object");
 
     id result = initialObject;
     for (id obj in self) {
@@ -59,7 +59,7 @@
 
 - (NSArray *)arrayByRemovingFirstObject
 {
-    return [self count] > 1 ? [self subarrayWithRange:NSMakeRange(1, [self count] - 1)] : @[];
+    return self.count > 1 ? [self subarrayWithRange:NSMakeRange(1, self.count - 1)] : @[];
 }
 
 @end

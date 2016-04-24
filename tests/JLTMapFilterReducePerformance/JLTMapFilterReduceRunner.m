@@ -27,11 +27,11 @@
 
 - (void)runAll
 {
-    NSArray *sample = @[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9"];
+    NSArray<NSString *> *sample = @[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9"];
 
     NSLog(@"arrayByMapping: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
         for (size_t i = 0; i < 1000; ++i) {
-            [sample arrayByMapping:^id(id obj) {
+            [sample arrayByMapping:^id _Nonnull(NSString * _Nonnull obj) {
                 return obj;
             }];
         }
@@ -39,7 +39,7 @@
 
     NSLog(@"arrayByFiltering: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
         for (size_t i = 0; i < 1000; ++i) {
-            [sample arrayByFiltering:^BOOL(id obj) {
+            [sample arrayByFiltering:^BOOL(NSString * _Nonnull obj) {
                 return YES;
             }];
         }
@@ -47,9 +47,9 @@
 
     NSLog(@"objectByReducing: %@ seconds", [self formattedNumberWithDurationOfBlock:^{
         for (size_t i = 0; i < 1000; ++i) {
-            [sample objectByReducing:^id(id obj1, id obj2) {
-                return obj1;
-            } initialObject:@"-"];
+            [sample objectByReducing:^id _Nonnull(id _Nonnull reducedObject, NSString * _Nonnull obj) {
+                return obj;
+            }];
         }
     }]);
 }
